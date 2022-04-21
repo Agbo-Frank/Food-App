@@ -4,11 +4,11 @@ import { FontAwesome } from '@expo/vector-icons';
 import React, { useState, useContext } from 'react'
 import Section from '../../components/Section';
 import Categories from '../../components/Categories';
-import categoryData from '../../categoryData';
-import productData from '../../productData';
+import categoryData from '../../db/categoryData';
+import productData from '../../db/productData';
 import Product from '../../components/Product';
 import Brand from '../../components/Brand';
-import brandData from '../../brandData';
+import brandData from '../../db/brandData';
 import Notification from '../../components/model/notification'
 import Products from '../../components/model/products'
 import { ModelContext } from '../../contex/modal';

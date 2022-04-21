@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Image, FlatList, TouchableOpacity, Dimensions, 
 import { useRef, useState } from 'react'
 import AppLoading from 'expo-app-loading';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import slideData from '../slideData';
+import slideData from '../db/slideData';
 
 const windowWidth = Dimensions.get('window').width;
 

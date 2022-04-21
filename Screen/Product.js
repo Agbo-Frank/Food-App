@@ -43,9 +43,9 @@ function Row(){
             justifyContent: 'space-between',
             paddingVertical: 10
             }}>
-            <View><Text style={style.tableText}>chicken</Text></View>
-            <Text style={style.tableText}>300</Text>
-            <QuantityControl />
+            <View style={style.cell1}><Text style={style.tableText}>chicken</Text></View>
+            <View style={style.cell2}><Text style={style.tableText}>300</Text></View>
+            <View style={style.cell3}><QuantityControl /></View>
         </View>
     )
 }
@@ -85,16 +85,16 @@ export default function Product({navigation}){
                         <Text style={{fontFamily: 'Poppins_400Regular', fontSize: 15}}>Price</Text>
                         <Text style={{fontFamily: 'Poppins_400Regular', fontSize: 24}}>$2000</Text>
                     </View>
-                    <View>
+                    <View style={{width: '25%'}}>
                         <Text style={{fontFamily: 'Poppins_400Regular', fontSize: 15}}>Quantity</Text>
                         <QuantityControl />
                     </View>
                 </View>
                 <View>
                     <View elevation={1} style={style.tableHeader}>
-                        <Text style={style.tableText}>Item</Text>
-                        <Text style={style.tableText}>Price</Text>
-                        <Text style={style.tableText}>Quantity</Text>
+                        <View style={style.cell1}><Text style={style.tableText}>Item</Text></View>
+                        <View style={style.cell2}><Text style={style.tableText}>Price</Text></View>
+                        <View style={style.cell3}><Text style={style.tableText}>Quantity</Text></View>
                     </View>
                     <View elevation={1} style={{...style.tableHeader, flexDirection: 'column'}}>
                         <Row />
@@ -136,7 +136,8 @@ const style = StyleSheet.create({
     qualityControl: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
+        width: '100%'
     },
     tableHeader:{
         flexDirection: 'row', 
@@ -150,5 +151,17 @@ const style = StyleSheet.create({
         fontSize: 14,
         fontFamily: 'Poppins_500Medium',
         textTransform: 'capitalize'
+    },
+    cell1: {
+        flexDirection: 'row',
+        width: "38%"
+    },
+    cell2: {
+        flexDirection: 'row',
+        width: "33%"
+    },
+    cell3: {
+        flexDirection: 'row',
+        width: "25%"
     }
 })

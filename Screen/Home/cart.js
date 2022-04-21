@@ -11,18 +11,25 @@ const CartBox = () => {
         <View elevation={6} style={{
             backgroundColor: 'white',
             borderRadius: 10,
-            position: 'relative'
+            padding: 10,
+            position: 'relative',
+            marginHorizontal: 20,
+            marginBottom: 20
             }}>
-            {/* <View style={{flexDirection: 'row', justifyContent: 'right'}}>
-                <Image source={require('../../assets/icons/delete.png')}  /> 
-            </View> */}
-            {/*<View style={{flexDirection: 'row', justifyContent: 'flex-start'}}>
-                {/* <Image source={require('../../assets/images/jellof_rice.png')} />
+            <View style={{flexDirection: 'row', justifyContent: 'flex-end'}}>
+                <Image source={require('../../assets/icons/delete.png')} style={{width: 24}} resizeMode='contain'/>
+            </View>
+            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                <Image source={require('../../assets/images/jellof_rice.png')} style={{width: 110}} resizeMode='contain' />
                 <View>
-                    <Text style={{fontFamily: 'Poppins_400Regular', fontSize: 14, textTransform: 'capitalize'}}>jellof rice</Text>
-                    <Text><Text style={{color: '#F27E77'}}>$</Text>2000</Text>
+                    <Text style={{
+                        textTransform: 'capitalize',
+                        fontSize: 14,
+                        fontFamily: 'Poppins_400Regular'
+                    }}>Jellof rice with chi</Text>
+                    <Text style={{fontSize: 14, fontFamily: 'Poppins_400Regular'}}><Text style={{color: '#F27E77'}}>$</Text>2000</Text>
                 </View>
-            </View>*/}
+            </View>
             <View style={style.qualityControl}>
                 <View style={{
                     borderRadius: 5,
@@ -50,13 +57,18 @@ const CartBox = () => {
 export default function Cart({navigation}){
     return(
         <Header title="your food cart" navigation={navigation}>
-            <View>
+            <ScrollView>
                 <CartBox />
-            </View>
+                <CartBox />
+                <CartBox />
+                <CartBox />
+                <CartBox />
+            </ScrollView>
             <View elevation={6} style={{
                 backgroundColor: 'white',
                 borderRadius: 10,
-                marginHorizontal: 20
+                marginHorizontal: 20,
+                marginVertical: 10
             }}>
                 <View style={style.line}><Text style={style.lineText}>Sub Total</Text><Text style={style.lineText}>500</Text></View>
                 <View style={{
@@ -75,11 +87,12 @@ export default function Cart({navigation}){
 const style = StyleSheet.create({
     qualityControl: {
         position: 'absolute',
-        bottom: 5,
-        right: 5,
+        bottom: 8,
+        right: 8,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
+        width: 70
     },
     line:{
         flexDirection: 'row',
